@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#some comentary
+echo -n "hola"
+echo -n "nueva linea"

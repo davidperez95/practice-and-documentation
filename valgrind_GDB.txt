@@ -1,0 +1,22 @@
+valgrind --tool=memcheck --track-origins=yes --leak-check=full --show-leak-kinds=all ./a.out
+
+https://github.com/eposts/Rich/blob/master/blog/Linux/The.Art.of.Debugging.with.GDB.DDD.and.Eclipse.pdf
+https://www.youtube.com/watch?v=L1ung0wil9Y
+https://ocw.mit.edu/
+
+https://bytes.usc.edu/cs104/wiki/valgrind/
+
+sudo apt-get update
+sudo apt-get install gdb
+gdb --version
+wget -P ~ https://git.io/.gdbinit
+pip install pygments
+
+start <arguments> => iniciar el debug del programa
+quit (q) => salir del gdb
+break (b) => set breakpoint in actual line
+break (b) <num> => set breakpoint in a line
+c => Jump to the next breakpoint
+n => next instruction/line
+s => enter to a function
+p <format> => imprimir el valor de algo (normalmente variables, puedes usar sintaxis de C).

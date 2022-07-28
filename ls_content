@@ -1,0 +1,8 @@
+total 28
+drwxr-xr-x 6 root root 4096 Jun  6 12:03 .
+drwx------ 1 root root 4096 Jun  6 12:52 ..
+drwxr-xr-x 8 root root 4096 Jun  6 12:52 .git
+-rw-r--r-- 1 root root   45 Jun  3 20:51 README.md
+drwxr-xr-x 2 root root 4096 Jun  3 21:03 basics
+drwxr-xr-x 2 root root 4096 Jun  6 12:52 io_redirections_and_filters
+drwxr-xr-x 2 root root 4096 Jun  3 20:51 permissions
