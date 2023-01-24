@@ -1,8 +1,10 @@
 // import the express package
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const db = require('./db');
 const router = require('./network/routes');
+
+db('mongodb+srv://davidperez95:Chiqui123+@gettingstarted.wqqcfez.mongodb.net/?retryWrites=true&w=majority');
 
 // start the express web application
 var app = express();

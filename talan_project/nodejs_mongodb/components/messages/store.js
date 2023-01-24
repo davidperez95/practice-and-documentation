@@ -1,13 +1,4 @@
-const db = require('mongoose');
 const Model = require('./model');
-
-const url = "mongodb+srv://davidperez95:Chiqui123+@gettingstarted.wqqcfez.mongodb.net/?retryWrites=true&w=majority"
-
-db.Promise = global.Promise;
-db.connect(url, {
-    useNewUrlParser: true,
-});
-console.log('[db] connection success');
 
 function addMessage (message) {
     // list.push(message);
@@ -15,15 +6,35 @@ function addMessage (message) {
     myMessage.save();
 }
 
-async function getMessages () {
+async function getMessages (filterUser) {
     // return list;
-    const messages = await Model.find();
+    let filter = {};
+    if (filterUser !== null) {
+        filter = {user: filterUser};
+    }
+    const messages = await Model.find(filter);
     return messages;
+}
+
+async function updateText (id, message) {
+    const foundMessage = await Model.findById(id);
+
+    foundMessage.message = message;
+    const newMessage = await foundMessage.save();
+    return newMessage;
+}
+
+function removeMessage(id) {
+    return Model.deleteOne({
+        _id: id
+    });
 }
 
 module.exports = {
     add: addMessage,
-    list: getMessages,
+    list: getMessages, 
+    updateText: updateText,
+    remove: removeMessage,
     // get
     // update
     // delete
