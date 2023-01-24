@@ -1,0 +1,21 @@
+{
+  "name": "nodejs_mongodb",
+  "version": "0.1.0",
+  "description": "un chat como telegram pero mucho mejor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "David Perez",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4"
+  }
+}
