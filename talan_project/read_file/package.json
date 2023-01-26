@@ -1,0 +1,18 @@
+{
+  "name": "read_file",
+  "version": "0.1.0",
+  "description": "Trying to figure out how to read pdf files",
+  "main": "reader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "read",
+    "pdf"
+  ],
+  "author": "David Perez",
+  "license": "ISC",
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  }
+}
