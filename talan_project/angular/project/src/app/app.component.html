@@ -1,0 +1,110 @@
+<div>
+  <div>
+      <span>Upload file</span>
+      <input type="file" (change)="getFile($event)">
+  </div>
+  <div>
+      <button (click)="sendFile()">Send</button>
+  </div>
+</div>
+<hr>
+
+<button (click)="getRequest()">Get</button>
+<button (click)="postRequest()">Post</button>
+
+<hr>
+
+<div class="field">
+  <ul *ngFor="let student of students">
+      <li>id: <input type="text" class="input" [value]="student.id" (keyup)="saveId($event)"></li>
+      <li>Name: <input type="text" class="input" [value]="student.name" (keyup)="saveName($event)"></li>
+      <li>Email: <input type="text" class="input" [value]="student.email" (keyup)="saveEmail($event)"></li>
+      <li>Gender: <textarea class="textarea" placeholder="Text area" [value]="student.gender"></textarea></li>
+  </ul>
+
+  <button (click)="saveToJson()">Save</button>
+
+</div>
+
+<h1>Class and styles</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
+<p class="message-error" [class.invalid]="nameInput2.invalid">Requierd space</p>
+<label>Name</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name">
+<p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Text text text</p>
+<div class="styles">
+  <div>
+    <input type="text" [(ngModel)]="widthImg">
+  </div>
+  <div>
+    <img [style.width.px]="widthImg" [src]="person.avatar">
+  </div>
+</div>
+
+<hr>
+
+<h1>ngFor in array of objects</h1>
+<div class="products--grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image">
+    <h2>{{ product.price }}</h2>
+    <p>{{ product.name }}</p>
+  </div>
+</div>
+
+<h1>ngFor</h1>
+<input type="text" required [(ngModel)]="newName">
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length === 0">Empty list</li>
+  <li *ngFor="let name of names; index as i">
+    {{i}} {{ name }}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+
+<h1>*ngIf</h1>
+<input type="text" required="" [(ngModel)]="person.name">
+<p *ngIf="person.name === 'David'">Soy David</p>
+<p *ngIf="person.name === 'Natalia' && person.age === 28; else elseBlock">Soy Natalia</p>
+<ng-template #elseBlock>
+  <p>Else Block</p>
+</ng-template>
+
+<h1>Ng Model</h1>
+<input type="text" required="" #nameInput="ngModel" [(ngModel)]="person.name">
+<p>Valid: {{ nameInput.valid }}</p>
+<input type="number" max="60" min="18" required="" #ageInput="ngModel" [(ngModel)]="person.age">
+<p>Age {{ person.age }}</p>
+<p>Valid: {{ ageInput.valid }}</p>
+
+<hr>
+
+<h1>Events</h1>
+<button [disabled]="buttonDisabled">Send</button>
+<button (click)="toggleButton()">Toogle Button</button>
+<p>Age {{ person.age }}</p>
+<button (click)="increaseAge()">Age ++</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis facilis consequuntur totam rem cupiditate ullam
+    deserunt quas. Iste, non ut? Aliquam amet inventore dolorem iste reprehenderit ipsa minus rem temporibus.</p>
+</div>
+<input type="text" [value]="person.name" (keyup)="changueName($event)">
+<p>Hola mi nombre es {{ person.name }}</p>
+
+<hr>
+
+<h1>Properties</h1>
+<button [disabled]="buttonDisabled">Send</button>
+<input type="text" [value]="person.name">
+<progress max="100" [value]="person.age"></progress>
+<img width="100" [src]="person.avatar">
+
+<hr>
+
+<h1>String interpolation</h1>
+<h1>Hola Mundo</h1>
+<h2>{{ 'Hola Mundo'.repeat(5) }}</h2>
+<p>3 + 3 = {{ 3 + 3 }}</p>
+<h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
+<img width="100" height="100" src={{img}} alt="image">
